@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+  }
+  
+.nav {
+    background-color: rgb(121, 188, 232);
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+  
+.nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.content{
+    text-align: center;
+    margin-top: 5%;
+}
+.interest_img{
+    text-align: center;
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+h1{
+    color: rgb(121, 188, 232);
+}
+
+.interest_img img{
+    width: 220px;
+    height: 220px;
+}
