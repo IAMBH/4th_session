@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="post">
+    <h1>글 목록</h1>
+    {% for post in posts %}
+    <div>
+        <h3>{{post.title}}</h3>
+        {{post.writer}} {{post.weather}} {{post.mood}} <br>
+        {{post.summary}}
+        <a href="{%url 'detail' post.id%}">...자세히</a>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

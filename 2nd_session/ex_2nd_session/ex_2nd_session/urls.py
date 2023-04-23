@@ -20,5 +20,9 @@ from main import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('',views.mainpage, name="mainpage"),
-    path('intro/', views.interestpage, name='interestpage')
+    path('intro/', views.interestpage, name='interestpage'),
+    path('new/',views.new, name="new"),
+    path('create/', views.create, name="create"),
+    path('post/', views.post, name='post'),
+    path('<int:id>', views.detail, name="detail")
 ]

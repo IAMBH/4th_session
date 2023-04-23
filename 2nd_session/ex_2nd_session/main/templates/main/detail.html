@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="detail_post"> 
+
+    <h1>{{post.title}}</h1>
+    작성자 : {{post.writer}} <br>
+    날짜 : {{post.pub_date}} <br>
+    날씨 : {{post.weather}} <br>
+    오늘의 상태 : {{post.mood}}
+    <hr>
+    <p>{{post.body}}</p>
+    
+</div>
+    
+
+{% endblock %}

@@ -15,8 +15,7 @@ body {
     font-size: 20px;
     padding: 20px;
 }
-
-a{
+.nav li a{
     color: white;
     text-decoration: none;
 }
@@ -39,4 +38,8 @@ h1{
 .interest_img img{
     width: 220px;
     height: 220px;
+}
+
+.post, .detail_post{
+    text-align: center;
 }
