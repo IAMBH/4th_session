@@ -13,7 +13,7 @@ urlpatterns = [
     path('update/<int:id>', update, name="update"),
     path('delete/<int:id>', delete, name="delete"),
     # img urls
-    path('edit_img/<int:id>', edit_img, name="edit_img"),
-    path('update_img/<int:id>', update_img, name="update_img"),
-    path('delete_img/<int:id>', delete_img, name="delete_img"),
+    # path('edit_img/<int:id>', edit_img, name="edit_img"),
+    # path('update_img/<int:id>', update_img, name="update_img"),
+    # path('delete_img/<int:id>', delete_img, name="delete_img"),
 ]

@@ -42,6 +42,10 @@ def update(request, id):
     update_post.title = request.POST['title']
     update_post.writer = request.POST['writer']
     update_post.pub_date = timezone.now()
+    if request.FILES.get('image'):
+        update_post.image = request.FILES.get('image')
+    else: 
+        update_post.image = update_post.image
     update_post.weather = request.POST['weather']
     update_post.mood = request.POST['mood'] 
     update_post.body = request.POST['body']
@@ -53,18 +57,18 @@ def delete(request, id):
     delete_post.delete()
     return redirect('main:post')
 
-def delete_img(request, id):
-    delete_img_post = Post.objects.get(id=id)
-    delete_img_post.image.delete(save=True)
-    return redirect('main:detail', delete_img_post.id)
+# def delete_img(request, id):
+#     delete_img_post = Post.objects.get(id=id)
+#     delete_img_post.image.delete(save=True)
+#     return redirect('main:detail', delete_img_post.id)
 
-def edit_img(request, id):
-    edit_img_post = Post.objects.get(id=id)
-    return render(request, 'main/editimg.html', {'post':edit_img_post})
+# def edit_img(request, id):
+#     edit_img_post = Post.objects.get(id=id)
+#     return render(request, 'main/editimg.html', {'post':edit_img_post})
 
-def update_img(request, id):
-    update_img_post = Post.objects.get(id=id)
-    update_img_post.image = request.FILES.get('image')
-    update_img_post.save()
-    return redirect('main:detail', update_img_post.id)
+# def update_img(request, id):
+#     update_img_post = Post.objects.get(id=id)
+#     update_img_post.image = request.FILES.get('image')
+#     update_img_post.save()
+#     return redirect('main:detail', update_img_post.id)
     

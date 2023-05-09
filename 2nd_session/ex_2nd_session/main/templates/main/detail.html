@@ -15,8 +15,6 @@
     {% else %}
         <p>!!!사진을 등록해주세요!!!</p>
     {% endif %}
-    <a href="{% url 'main:edit_img' post.id %}">사진 수정하기</a>
-    <a href="{% url 'main:delete_img' post.id %}">사진 삭제하기</a>
     <p>{{post.body}}</p>
     <a href="{% url 'main:edit' post.id %}">수정하기</a>
     <a href="{% url 'main:delete' post.id %}">삭제하기</a>
