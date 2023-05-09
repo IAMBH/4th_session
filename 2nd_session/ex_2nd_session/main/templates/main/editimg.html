@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <h1>사진 수정하기</h1>
+    <form action="{% url 'main:update_img' post.id %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>현재 올라온 사진</p>
+        {% if post.image %}
+            <img src="{{post.image.url}}" alt="사진">
+        {% else %}
+            <p>---없음---</p>
+        {% endif %}
+        <p>수정할 사진을 선택해주세요</p>
+        <p>사진 : <input type="file" name="image"></p>
+        <button type="submit">제출</button>
+    </form>
+</div>
+{% endblock %}
