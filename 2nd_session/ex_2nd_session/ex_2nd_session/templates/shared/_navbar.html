@@ -1,8 +1,18 @@
 <nav>
+
   <ul class="nav">
     <li><a href="{% url 'main:mainpage' %}">HOME</a></li>
     <li><a href="{% url 'main:interestpage' %}">INTEREST</a></li>
     <li><a href="{% url 'main:post' %}">POST</a></li>
+  {% if user.is_authenticated %}
     <li><a href="{% url 'main:new' %}">WRITE</a></li>
+    <li><a href="{% url 'users:mypage' %}">mypage</a></li>
+    <li>{{user.username}}</li>
+    <li><a href="{% url 'accounts:logout' %}">로그아웃</a></li>
+  {% else %}
+    <li><a href="{% url 'accounts:login' %}">login</a></li>
+    <li><a href="{% url 'accounts:signup' %}">signup</a></li>
+  {%endif%}
   </ul>
+
 </nav>
