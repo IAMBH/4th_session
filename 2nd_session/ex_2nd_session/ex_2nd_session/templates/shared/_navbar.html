@@ -6,7 +6,7 @@
     <li><a href="{% url 'main:post' %}">POST</a></li>
   {% if user.is_authenticated %}
     <li><a href="{% url 'main:new' %}">WRITE</a></li>
-    <li><a href="{% url 'users:mypage' %}">mypage</a></li>
+    <li><a href="{% url 'users:mypage' user.id %}">mypage</a></li>
     <li><a href="{% url 'main:tag_list' %}">TAGS</a></li>
     <li>{{user.username}}</li>
     <li><a href="{% url 'accounts:logout' %}">로그아웃</a></li>

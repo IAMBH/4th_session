@@ -15,6 +15,7 @@ urlpatterns = [
     path('tag/', tag_list, name="tag_list"),
     path('tag/<int:tag_id>', tag_posts, name="tag_posts"),
     path('delete_com/<int:id>', delete_com, name="delete_com"),
+    path('likes/<int:post_id>', likes, name="likes"),
     # img urls
     # path('edit_img/<int:id>', edit_img, name="edit_img"),
     # path('update_img/<int:id>', update_img, name="update_img"),

@@ -5,7 +5,7 @@
 <div class="detail_post"> 
 
     <h1>{{post.title}}</h1>
-    작성자 : {{post.writer}} <br>
+    작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{post.writer}}</a> <br>
     날짜 : {{post.pub_date}} <br>
     날씨 : {{post.weather}} <br>
     오늘의 상태 : {{post.mood}}
@@ -26,6 +26,17 @@
     <a href="{% url 'main:delete' post.id %}">삭제하기</a>
     {% endif %}
     <hr>
+
+    <a href="{% url 'main:likes' post.id %}">
+        {% if user in post.like.all %}
+        취소
+        {% else %}
+        좋아요
+        {% endif %}
+    </a>
+    {{post.like_count}}개
+    <hr>
+
     <h2>댓글 작성하기</h2>
     <form method="POST" action="{% url 'main:detail' post.id %}" >
         {%csrf_token%}
